@@ -3,7 +3,7 @@ Title LeClick Opener 30303030
 @echo off
 cls
 
-echo Launching LeClick v1.3
+echo Launching LeClick v1.2
 
 timeout 4 >nul
 
