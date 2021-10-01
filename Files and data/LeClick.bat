@@ -1,6 +1,6 @@
 
 @echo off
-title LeClick v1.3 - Upgrade time!
+title LeClick v1.2 - Upgrade time!
 color 0f
 
 
