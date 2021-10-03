@@ -1,7 +1,8 @@
 
 @echo off
-title LeClick v1.2 - Upgrade time!
+title LeClick v1.2.1 - Upgrade time!
 color 0f
+@mode con cols=50 lines=30
 
 
 ::loading Section
@@ -53,7 +54,7 @@ echo.
 echo ------------------------
 echo -- Hello %login%!
 echo -- Welcome to LeClick!
-echo -- Version 1.3
+echo -- Version 1.2.1
 echo ------------------------
 echo -- Money: %money%
 echo ------------------------
@@ -64,6 +65,7 @@ set/p "men=-- Choose: "
 if %men%==1 goto game
 if %men%==2 goto options
 if %men%==3 exit
+goto menu
 
 ::Options Section
 
@@ -78,6 +80,7 @@ echo -- 2. Exit Options Menu
 set/p "op=-- Choose: "
 if %op%==1 goto acc
 if %op%==2 goto menu
+goto options
 
 ::Account Section
 
@@ -91,11 +94,17 @@ set/p "passw=New Password: "
 echo -------------------------------
 goto yn
 :yn
-echo Now you will login with these.
+cls
+echo Now you will login with these:
+echo Login: %login%
+echo Password: %passw%
 echo Do you want to proceed?
+echo (if no then click "n" 
+echo and restart the game)
 set/p "yn=y/n: "
 if %yn%==y goto saveacc
 if %yn%==n goto options
+goto yn
 cls
 goto yn
 
@@ -116,7 +125,6 @@ goto options
 :game
 cls
 If "%Errorlevel%"=="9009" (Echo. CHOICE command not found&Pause&Exit)
-@mode con cols=50 lines=30
 cls
 
 echo.
@@ -196,6 +204,7 @@ set/a money=money-100
 echo.
 echo.
 echo Done! c = %multi%
+pause
 goto upgrade
 
 :2
@@ -204,6 +213,7 @@ set/a money=money-1000
 echo.
 echo.
 echo Done! c = %multi%
+pause
 goto upgrade
 
 :3
@@ -212,6 +222,7 @@ set/a money=money-10000
 echo.
 echo.
 echo Done! c = %multi%
+pause
 goto upgrade
 
 :4
@@ -220,6 +231,7 @@ set/a money=money-100000
 echo.
 echo.
 echo Done! c = %multi%
+pause
 goto upgrade
 
 :5
@@ -228,6 +240,7 @@ set/a money=money-1000000
 echo.
 echo.
 echo Done! c = %multi%
+pause
 goto upgrade
 
 

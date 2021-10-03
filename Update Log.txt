@@ -1,0 +1,30 @@
+== 1.2.1 - Bug Fix ==
+Features:
+
+* Added Launcher UI
+
+Patch Notes:
+
+* Fixed wrong selected UI Error
+* Fixed Upgrade done showing
+* Fixed Launcher showing wrong version
+
+== 1.2 - Upgrade Time! ==
+* Upgrades:
++2 money per click
++5 money per click
++10 money per click
++15 money per click
++20 money per click
+
+== 1.1 - Account Update! ==
+* Added Account System
+  * Everyting in files!
+
+== 1.0b ==
+* Added something to Readme.txt file
+
+== 1.0 ==
+* Game Relased!
+* Added Save File System
+* Added, Ummmm... Clicking system?
