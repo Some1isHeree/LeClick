@@ -1,3 +1,24 @@
+== snapshot 1.3a ==
+Features:
+
+* Added Points.
+
+Patch Notes:
+* Fixed negative money count, when buying smth expencive.
+Now it doesn't take your money, but it displays message
+that says you don't have enough money.
+
+Plans:
+
+* Achivements
+* Winning system
+
+!! WARNING !!
+When new snapshot / version will come, then go to
+"Files and data folder and transport
+tp.txt , money.txt , login.txt , passw.txt , multi.txt files to newer version
+!! WARNING!!
+
 == 1.2.1 - Bug Fix ==
 Features:
 
@@ -9,6 +30,12 @@ Patch Notes:
 * Fixed Upgrade done showing
 * Fixed Launcher showing wrong version
 
+!! WARNING !!
+When new snapshot / version will come, then go to
+"Files and data folder and transport
+tp.txt , money.txt , login.txt , passw.txt , multi.txt files to newer version
+!! WARNING!!
+
 == 1.2 - Upgrade Time! ==
 * Upgrades:
 +2 money per click
@@ -16,6 +43,12 @@ Patch Notes:
 +10 money per click
 +15 money per click
 +20 money per click
+
+!! WARNING !!
+When new snapshot / version will come, then go to
+"Files and data folder and transport
+tp.txt , money.txt , login.txt , passw.txt , multi.txt files to newer version
+!! WARNING!!
 
 == 1.1 - Account Update! ==
 * Added Account System

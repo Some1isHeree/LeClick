@@ -1,4 +1,4 @@
-Title LeClick Opener 30303030
+Title LeClick Launcher 30303030
 
 @echo off
 cls
@@ -23,10 +23,10 @@ if %errorlevel%==2 exit
 :start
 cls
 echo.
-echo Launching LeClick v1.2.1
+
+echo Launching LeClick snapshot 1.3a
 
 timeout 4 >nul
-
 cd %cd%
 cd *\Files and Data\
 start LeClick.bat
