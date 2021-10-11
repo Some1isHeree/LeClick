@@ -1,19 +1,20 @@
 
 @echo off
-title LeClick snapshot 1.3a
+title LeClick snapshot 1.3b
 color 0f
 @mode con cols=50 lines=30
 
+::For coloristic text I used cecho by thomas_polaert
 
 ::loading Section
 
 cls
 
-for /f "tokens=*" %%a in ('type money.txt ') do set money=%%a
-for /f "tokens=*" %%a in ('type login.txt ') do set login=%%a
-for /f "tokens=*" %%a in ('type passw.txt ') do set passw=%%a
-for /f "tokens=*" %%a in ('type multi.txt ') do set multi=%%a
-for /f "tokens=*" %%a in ('type tp.txt ') do set tp=%%a
+for /f "tokens=*" %%a in ('type money.lc ') do set money=%%a
+for /f "tokens=*" %%a in ('type login.lc ') do set login=%%a
+for /f "tokens=*" %%a in ('type passw.lc ') do set passw=%%a
+for /f "tokens=*" %%a in ('type multi.lc ') do set multi=%%a
+for /f "tokens=*" %%a in ('type tp.lc ') do set tp=%%a
 
 goto login
 
@@ -25,9 +26,9 @@ cls
 echo.
 echo.
 echo ---------------------------------
-echo Please login.
-echo if you DO NOT have account then,
-echo then type Player in each
+cecho {0c}Please login.{#}{\n}
+cecho if you {0c}DO NOT{#} have account{\n}
+cecho then, type {0b}Player{#} in each{\n}
 echo ---------------------------------
 set/p "a=-- Login: "
 if not %a%==%login% goto Error
@@ -55,19 +56,43 @@ echo.
 echo ------------------------
 echo -- Hello %login%!
 echo -- Welcome to LeClick!
-echo -- Version 1.3a
+echo -- Version 1.3b
 echo ------------------------
-echo -- Money: %money%
-echo -- Points: %tp%
+cecho {0a}Money:{#} {0e}%money%{#}{\n}
+cecho {0b}Points:{#} {0e}%tp%{#}{\n}
 echo ------------------------
 echo -- 1. Play!
 echo -- 2. Options
-echo -- 3. Exit
+echo -- 3. Credits
+echo -- 4. Exit
 set/p "men=-- Choose: "
 if %men%==1 goto game
 if %men%==2 goto options
-if %men%==3 exit
+if %men%==3 goto cred
+if %men%==4 exit
 goto menu
+
+::Credits
+
+:cred
+cls
+echo.
+echo.
+cecho {0c}C{0b}r{0e}e{0d}d{0a}i{09}t{0c}s{0b}{#}{\n}
+echo.
+cecho Game by {0e}Some1isHeree{#}{\n}
+echo.
+cecho {0e}Colors{#} by {0b} thomas_polaert {#}{\n}
+echo.
+cecho {0b}Test{0c}ers{#}{\n}
+echo 0mega
+echo worsethe
+echo MurderyBanana
+echo.
+timeout /t 2 /nobreak >nul
+pause
+goto menu
+
 
 ::Options Section
 
@@ -137,9 +162,9 @@ echo I I I I I I I I I I I I
 echo C C C C C C C C C C C C
 echo K K K K K K K K K K K K
 echo -----------------------
-echo Money: %money%
-echo Points: %tp%
-echo Name: %login%
+cecho {0a}Money:{#} {0e}%money%{#}{\n}
+cecho {0b}Points:{#} {0e}%tp%{#}{\n}
+cecho {0c}Name:{#} {0e}%login%{#}{\n}
 echo -----------------------
 echo press 1 to click
 echo press 2 to save
@@ -156,6 +181,7 @@ goto game
 
 :click
 set/a tp=tp+1
+if %tp%==100000000 goto win
 set/a money=money+multi
 goto game
 
@@ -180,15 +206,15 @@ echo.
 echo -----------------------
 echo "c" stands for 
 echo "money per click"
-echo press 1 to buy +1 c
+cecho press 1 to buy {0b}+1 c{#}{\n}
 echo (100$)
-echo press 2 to buy +5 c
+cecho press 2 to buy {0b}+5 c{#}{\n}
 echo (1 000$)
-echo press 3 to buy +10 c
+cecho press 3 to buy {0b}+10 c{#}{\n}
 echo (10 000$)
-echo press 4 to buy +15 c
+cecho press 4 to buy {0b}+15 c{#}{\n}
 echo (100 000$) 
-echo press 5 to buy +20 c
+cecho press 5 to buy {0b}+20 c{#}{\n}
 echo (1 000 000$)
 echo.
 echo press 6 to go back
@@ -297,7 +323,21 @@ echo.
 pause
 goto upgrade
 
-
+:win
+cls
+echo.
+echo.
+cecho {0e}         CONGRATULATIONS!{#}{\n}
+cecho {0d}        YOU'VE WON MY GAME!{#}{\n}
+cecho {0c}        THANKS FOR PLAYING!{#}{\n}
+cecho 1. {0b}Go back to game{#}{\n}
+cecho 2. {0a}Go to menu{#}{\n}
+cecho 3. {0c}Exit Game{#}{\n}
+echo.
+choice /c:123 /n >nul
+if %errorlevel%==1 goto game
+if %errorlevel%==2 goto menu
+if %errorlevel%==3 exit
 
 
 
